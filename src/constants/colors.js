@@ -1,48 +1,50 @@
 // src/constants/colors.js
 
 /**
- * Palette de couleurs inspirée d'Agadir
- * Bleu océan + Sable doré
+ * Palette de couleurs orange moderne
+ * Inspirée du style "Sunset / Orange Pro"
  */
+
 export const COLORS = {
-  // Couleurs principales
-  primary: '#1E88E5',        // Bleu océan Agadir
-  primaryLight: '#64B5F6',   // Bleu clair
-  primaryDark: '#1565C0',    // Bleu foncé
-  
-  secondary: '#F4A261',      // Sable doré
-  secondaryLight: '#F6B17A',
-  secondaryDark: '#E76F51',
-  
+  // Couleurs principales (ORANGE)
+  primary: '#F57C00',           // Orange principal
+  primaryLight: '#FF9800',      // Orange clair
+  primaryDark: '#E65100',       // Orange foncé
+
+  // Couleur secondaire (plus neutre pour accompagner l’orange)
+  secondary: '#FFA726',         // Orange doux (accent)
+  secondaryLight: '#FFB74D',
+  secondaryDark: '#FB8C00',
+
   // Statuts
-  success: '#2ECC71',        // Vert (tâche terminée)
-  danger: '#E74C3C',         // Rouge (supprimer)
-  warning: '#F39C12',        // Orange (alerte)
-  info: '#3498DB',           // Bleu info
-  
+  success: '#2ECC71',           // Vert
+  danger: '#E74C3C',            // Rouge
+  warning: '#FB8C00',           // Orange alerte
+  info: '#4FC3F7',              // Bleu clair
+
   // Neutres
   white: '#FFFFFF',
-  black: '#2C3E50',
-  gray: '#95A5A6',
-  grayLight: '#ECF0F1',
-  grayDark: '#7F8C8D',
-  
+  black: '#1A1A1A',
+  gray: '#9E9E9E',
+  grayLight: '#E0E0E0',
+  grayDark: '#616161',
+
   // Backgrounds
-  background: '#F8F9FA',
-  backgroundDark: '#ECEFF1',
-  
+  background: '#FAFAFA',
+  backgroundDark: '#F5F5F5',
+
   // Text
-  textPrimary: '#2C3E50',
-  textSecondary: '#7F8C8D',
-  textLight: '#BDC3C7',
-  
-  // Borders
-  border: '#E1E8ED',
-  borderDark: '#CFD8DC',
-  
+  textPrimary: '#212121',
+  textSecondary: '#757575',
+  textLight: '#BDBDBD',
+
+  // Bordures
+  border: '#E0E0E0',
+  borderDark: '#BDBDBD',
+
   // Status tâches
-  statusPending: '#FFA726',  // Orange pour "en attente"
-  statusDone: '#66BB6A',     // Vert pour "terminée"
+  statusPending: '#FFB74D',     // Orange doux
+  statusDone: '#66BB6A',        // Vert
 };
 
 /**
@@ -54,7 +56,7 @@ export const SHADOWS = {
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
-    elevation: 2, // Android
+    elevation: 2,
   },
   medium: {
     shadowColor: '#000',
@@ -105,5 +107,5 @@ export const BORDER_RADIUS = {
   md: 8,
   lg: 12,
   xl: 16,
-  round: 999, // Complètement arrondi
+  round: 999,
 };
