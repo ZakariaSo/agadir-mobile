@@ -2,37 +2,36 @@
 
 /**
  * Configuration des URLs de l'API
- * Changez selon votre environnement
  */
 
-// Pour un émulateur Android
+// Pour un émulateur Android uniquement
 export const API_URL_ANDROID = 'http://10.0.2.2:4000/api';
 
 // Pour iOS Simulator
 export const API_URL_IOS = 'http://localhost:4000/api';
 
-// Pour un appareil physique (remplacez par votre IP locale)
-export const API_URL_PHYSICAL = 'http://192.168.1.100:4000/api';
+// Pour un appareil physique (Android ou iOS) ou Web
+export const API_URL_PHYSICAL = 'http://192.168.100.211:4000/api';
 
 // URL de production (à configurer plus tard)
 export const API_URL_PRODUCTION = 'https://votre-api.com/api';
 
-// Détection automatique de l'environnement
 import { Platform } from 'react-native';
 
 let BASE_URL;
 
+// Détection automatique propre
 if (__DEV__) {
-  // Mode développement
   if (Platform.OS === 'android') {
-    BASE_URL = API_URL_ANDROID;
+    // Si tu utilises un ÉMULATEUR Android → 10.0.2.2
+    // Si tu utilises un téléphone Android réel → on force l’IP locale
+    BASE_URL = Platform.isTV ? API_URL_ANDROID : API_URL_PHYSICAL;
   } else if (Platform.OS === 'ios') {
     BASE_URL = API_URL_IOS;
   } else {
-    BASE_URL = API_URL_PHYSICAL; // Web ou appareil physique
+    BASE_URL = API_URL_PHYSICAL; // Web ou autres
   }
 } else {
-  // Mode production
   BASE_URL = API_URL_PRODUCTION;
 }
 
@@ -40,12 +39,10 @@ export const API_URL = BASE_URL;
 
 // Endpoints de l'API
 export const ENDPOINTS = {
-  // Auth
   REGISTER: '/auth/register',
   LOGIN: '/auth/login',
   ME: '/auth/me',
-  
-  // Tasks
+
   TASKS: '/tasks',
   TASK_BY_ID: (id) => `/tasks/${id}`,
   TASK_DONE: (id) => `/tasks/${id}/done`,
