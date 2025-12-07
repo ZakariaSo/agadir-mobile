@@ -6,13 +6,13 @@
  */
 
 // Pour un émulateur Android
-export const API_URL_ANDROID = 'http://10.0.2.2:5000/api';
+export const API_URL_ANDROID = 'http://10.0.2.2:4000/api';
 
 // Pour iOS Simulator
-export const API_URL_IOS = 'http://localhost:5000/api';
+export const API_URL_IOS = 'http://localhost:4000/api';
 
 // Pour un appareil physique (remplacez par votre IP locale)
-export const API_URL_PHYSICAL = 'http://192.168.1.100:5000/api';
+export const API_URL_PHYSICAL = 'http://192.168.1.100:4000/api';
 
 // URL de production (à configurer plus tard)
 export const API_URL_PRODUCTION = 'https://votre-api.com/api';
