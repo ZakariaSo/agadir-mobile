@@ -1,20 +1,25 @@
+// App.js
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { AuthProvider } from './src/contexts/AuthContext';
+import AppNavigator from './src/navigation/AppNavigator';
 
+/**
+ * Composant principal de l'application
+ * Wrap toute l'app avec les providers nécessaires
+ */
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaProvider>
+      {/* AuthProvider : Fournit le contexte d'authentification à toute l'app */}
+      <AuthProvider>
+        {/* Navigation principale */}
+        <AppNavigator />
+        
+        {/* StatusBar : Barre de statut en haut (heure, batterie, etc.) */}
+        <StatusBar style="auto" />
+      </AuthProvider>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
